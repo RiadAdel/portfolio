@@ -43,10 +43,10 @@ header {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: #ddd;
 }
 
 header p {
-    color: #dddddd;
     font-size: 2em;
     line-height: 10vh;
     margin: 0 2%;
@@ -71,7 +71,6 @@ header nav ul {
 header nav ul li {
     display: inline-block;
     line-height: 10vh;
-    color: #ddd;
     padding: 0 16px;
 }
 
@@ -90,17 +89,16 @@ header .icons {
 }
 
 header .icons a {
-    color: #ddd;
     padding: 0 10px;
     font-size: 2em;
-    transition: font-size 0.25s;
+    transition: all 0.25s;
     flex: 1;
 }
 
 header .icons a:hover {
     color: #ffffff;
     cursor: pointer;
-    font-size: 2.5em;
+    transform: scale(1.1);
 }
 
 /********* Main Content *********/

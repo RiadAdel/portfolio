@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded',function(){
     })
     const  name = "Riad Adel";
     const  title = "Computer Engineering Student";
-    const  details = "I love javascript";
+    const  details = "I love to work as a front-End developer";
     const delay = 150;
 
-    typingAnimation(nameElm,"Riad Adel",delay)
-    setTimeout(()=>typingAnimation(titleElm,"computer Engineering Student",delay),delay*name.length);
-    setTimeout(()=>typingAnimation(detailsElm,"I love to work as a front End",delay,false),delay*name.length + delay*title.length);    
+    typingAnimation(nameElm,name,delay)
+    setTimeout(()=>typingAnimation(titleElm,title,delay),delay*name.length);
+    setTimeout(()=>typingAnimation(detailsElm,details,delay,false),delay*name.length + delay*title.length);    
 })
