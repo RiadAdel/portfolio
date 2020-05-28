@@ -25,7 +25,12 @@ a:hover {
     text-decoration: none;
     color: #ddd;
 }
-
+img {
+    background-color: #ffffff;
+    border: 1px solid #DDD;
+    padding: 3px;
+    box-shadow: 10px 10px 20px rgba(5, 0, 15, 0.3);
+}
 /********* Start *********/
 
 
@@ -44,6 +49,7 @@ header {
     -ms-user-select: none;
     user-select: none;
     color: #ddd;
+    z-index: 10;
 }
 
 header p {
@@ -109,6 +115,7 @@ main {
 section {
     height: 90vh;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -174,13 +181,86 @@ main .introduction .text p {
     animation: blink-caret .75s step-end infinite;
 }
 
+/********* Previous Work *********/
+
 main .previous-work {
-    background-color: royalblue;
+    background-color: #fff;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+main .previous-work .slide {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+main .previous-work .current {
+    z-index: 1;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+
+main .previous-work .info {
+    width: 40%;
+    overflow: hidden;
+    margin-right: 30px;
+}
+
+main .previous-work .info h1 {
+    overflow: hidden;
+    text-align: left;
+    font-size: 4em;
+}
+
+main .previous-work img {
+    background-color: #EEE;
+    max-width: 40%;
+    overflow: hidden;
+    text-align: center;
+    max-height: 50%;
+    transform: rotateZ(20deg);
+}
+
+main .previous-work #left {
+    position: absolute;
+    left: 5%;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 2;
+}
+
+main .previous-work #right {
+    position: absolute;
+    right: 5%;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+/********* Contact Us *********/
 
 main .contact-us {
     background-color: rebeccapurple;
 }
+
 
 /********* Footer *********/
 footer {
