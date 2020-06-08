@@ -20,7 +20,7 @@ function typingAnimation(elm, content, delay = 150, removeAfterFinish = true) {
 
 function prevSlide(slider, currentSlide) {
     const slides = slider.querySelectorAll("div.slide");
-    slides[currentSlide].classList.remove("current");
+    slides[currentSlide].classList.remove("current"); 
     currentSlide = currentSlide == 0 ? slides.length - 1 : currentSlide - 1
     slides[currentSlide].classList.add("current");
     return currentSlide
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const titleElm = document.getElementById("title");
     const detailsElm = document.getElementById("details");
     const slider = document.getElementById("prev-work");
+    const sendEmailFormElm = document.getElementById("send-email")
     if (navElms.length != contentElms.length) {
         console.log("Navigation error");
         return
@@ -68,4 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSlide = nextSlide(slider, currentSlide)
     });
 
+    sendEmailFormElm.addEventListener("submit",function(e){
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(sendEmailFormElm).entries());
+        window.open(`mailto:riadadel22@gmail.com?subject=${data.subject}&body=${data.content}`)
+    })
 })
