@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     const name = "Riad Adel";
     const title = "Computer Engineer";
-    const details = "I love to work as a front-End developer";
+    const details = "I am focusing on learning frontend frameworks such as React and React Native.";
     const delay = 150;
 
     typingAnimation(nameElm, name, delay)
