@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
 
 *,
 *::before,
@@ -60,17 +61,22 @@ header {
 }
 
 header p {
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 10vh;
     margin: 0 2%;
     text-align: center;
+}
+
+header p span {
+    font-family: 'Amarante', cursive;
+    color: #ffdf00;
 }
 
 header nav {
     flex: 1;
     display: flex;
     height: 10vh;
-    font-size: 1em;
+    font-size: 1.5rem;
 }
 
 header nav ul {
@@ -133,7 +139,7 @@ main .introduction {
 }
 
 main .introduction img {
-    height: 80%;
+    width: 25%;
     background-color: #ffffff;
     border: 1px solid #aaa;
     padding: 2px;
@@ -165,13 +171,13 @@ main .introduction .text * {
 
 main .introduction .text h1 {
     color: #EEE;
-    font-size: 5em;
+    font-size: 5rem;
     margin-bottom: 6px;
 }
 
 main .introduction .text h3 {
     color: #EEE;
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
