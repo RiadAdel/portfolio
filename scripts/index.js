@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scroll(elm, contentElms[i])
     })
     const name = "Riad Adel";
-    const title = "Computer Engineering Student";
+    const title = "Computer Engineer";
     const details = "I love to work as a front-End developer";
     const delay = 150;
 
