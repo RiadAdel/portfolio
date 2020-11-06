@@ -89,23 +89,6 @@
 
       <!------------------------------ Contact Us  ---------------------------------->
       <section id="contact-us" class="contact-us">
-        <form id="send-email">
-          <h1>Send an Email</h1>
-          <label for="subject">Subject</label>
-          <input
-            required
-            name="subject"
-            type="text"
-            placeholder="Enter the email subject"
-          />
-          <label for="content">Message</label>
-          <textarea
-            required
-            name="content"
-            placeholder="Enter you message here."
-          ></textarea>
-          <button type="submit">Send</button>
-        </form>
         <div class="contact-info">
           <h1>Contact Us</h1>
           <div>
@@ -121,6 +104,23 @@
             <p>Cairo, Egypt</p>
           </div>
         </div>
+        <form id="send-email" autocomplete="off">
+          <h1>Send an Email</h1>
+          <label for="subject">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            placeholder="Enter the email subject"
+          />
+          <label for="content">Message</label>
+          <textarea
+            id="content"
+            name="content"
+            placeholder="Enter you message here."
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
       </section>
     </main>
     <footer>© 2020 Riad Adel All Rights Reserved</footer>
