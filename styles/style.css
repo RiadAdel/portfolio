@@ -132,13 +132,13 @@ header .icons a:hover {
 /********* Main Content *********/
 
 section {
-  min-height: 90vh;
+  height: 90vh;
   padding: 0 5%;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 main .introduction {
@@ -157,6 +157,7 @@ main .introduction img {
 main .introduction .text {
   flex: 1;
   max-width: 700px;
+  min-height: 50vh;
   color: #eee;
   font-family: "Roboto Mono", monospace;
 }
@@ -174,12 +175,12 @@ main .introduction .text {
 
 main .introduction .text h1 {
   color: #eee;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 main .introduction .text h3 {
   color: #eee;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: normal;
   padding: 0.5rem 0 1rem 0;
 }
@@ -235,37 +236,42 @@ main .previous-work img {
 }
 main .previous-work .info h1 {
   text-align: left;
-  font-size: 4em;
+  font-size: 3em;
 }
 
 main .previous-work #left {
   position: absolute;
+  padding: 1rem;
   left: 5%;
   font-size: 2em;
   cursor: pointer;
   z-index: 2;
-  transform: translateX(-100%);
+  transform: translateX(-50%);
 }
 
 main .previous-work #right {
   position: absolute;
+  padding: 1rem;
   right: 5%;
   font-size: 2em;
   cursor: pointer;
   z-index: 2;
-  transform: translateX(100%);
+  transform: translateX(50%);
 }
 
 /********* Contact Us *********/
 
 main .contact-us {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   padding: 1rem;
   position: relative;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  height: auto;
+  min-height: 90vh;
 }
 
 main .contact-us .contact-info {
@@ -304,6 +310,7 @@ main .contact-us .contact-info h1 {
 /********* Email Form *********/
 main .contact-us form {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
