@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const details =
-    "Hi there! 😁\n I am a Frontend Developer and a Javascript Lover 👌";
+    "Hi there! 😁\n From raw data to real-time impact — that’s my craft 👌";
   const delay = 85;
 
   typingAnimation(detailsElm, details, delay, false);

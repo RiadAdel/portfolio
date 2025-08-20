@@ -22,8 +22,8 @@
       <nav>
         <ul>
           <li>Who am I?</li>
-          <li>Portfolio</li>
-          <li>Contact us</li>
+          <li>Projects</li>
+          <li>Contact me</li>
         </ul>
       </nav>
       <div class="icons">
@@ -45,63 +45,87 @@
       <section id="intro" class="introduction">
         <div class="text">
           <h1 id="name">Riad Adel</h1>
-          <h3 id="title">Software Engineer</h3>
+          <h3 id="title">Data Engineer</h3>
           <p id="details"></p>
         </div>
-        <img src="assets/images/Riad.jpg" />
+        <img src="assets/images/riad.png" />
       </section>
 
-      <!------------------------------ Previous Work  ------------------------------->
-      <section id="prev-work" class="previous-work">
+      <!-- PROJECTS -->
+      <section id="prev-work" class="previous-work" aria-label="Projects">
         <div class="slide current">
           <div class="info">
-            <h1>Forrest</h1>
+            <h1>FraudStream (Real‑time)</h1>
             <p>
-              GUI to communicate with the robot simulation tool, send SVG path
-              to the robot to walk on, this is done using React, React Hooks and
-              Sockets
+              End‑to‑end fraud detection with Kafka → Spark Structured Streaming
+              → Delta Lake. Low‑latency features served via Redis; sub‑second
+              scoring with SCD2 history.
             </p>
           </div>
-          <img src="assets/images/Forrest.png" />
         </div>
         <div class="slide">
           <div class="info">
-            <h1>Elcinema</h1>
+            <h1>Performance Optimization & Incremental Loads</h1>
             <p>
-              A Website using React and laravel to reserve movie tickets online.
+              Designed and implemented incremental loading strategies to replace
+              full refresh jobs, improving efficiency and cutting processing
+              time by 70%. Optimized Spark jobs with partition pruning, caching,
+              and adaptive query execution for scalable performance.
             </p>
           </div>
-          <img src="assets/images/ElCinema.jpg" />
         </div>
         <div class="slide">
           <div class="info">
-            <h1>Handsa</h1>
+            <h1>Realtime Feature Store</h1>
             <p>
-              A cross-platform app using React Native for a construction company
-              in Kuwait.
+              Streaming aggregations, late‑arriving handling, and point‑in‑time
+              joins. Designed for experiment-ready metrics and backfills without
+              downtime.
             </p>
           </div>
-          <img src="assets/images/Handsa.png" />
         </div>
-        <div id="left" class="fa fa-chevron-left"></div>
-        <div id="right" class="fa fa-chevron-right"></div>
+
+        <div class="slide">
+          <div class="info">
+            <h1>Batch → Streaming Migration</h1>
+            <p>
+              Re‑platformed KPI pipelines to event‑driven architecture; cut
+              latency from hours to minutes. Added data quality checks and
+              idempotent upserts for reliability.
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="left"
+          class="fa fa-chevron-left"
+          aria-label="Previous slide"
+          role="button"
+          tabindex="0"
+        ></div>
+        <div
+          id="right"
+          class="fa fa-chevron-right"
+          aria-label="Next slide"
+          role="button"
+          tabindex="0"
+        ></div>
       </section>
 
       <!------------------------------ Contact Us  ---------------------------------->
       <section id="contact-us" class="contact-us">
         <div class="contact-info">
-          <h1>Contact Us</h1>
+          <h1>Contact Me</h1>
           <div>
             <i class="fa fa-address-card"></i>
             <p>riadadel22@gmail.com</p>
           </div>
           <div>
             <i class="fa fa-phone-square"></i>
-            <p>01066747537</p>
-          </div>
-          <div>
-            <i class="fa fa-home"></i>
-            <p>Cairo, Egypt</p>
+            <div class="phones">
+              <p class="phone">+20 1066 747537</p>
+              <p class="phone">+966 5627 18929</p>
+            </div>
           </div>
         </div>
         <form id="send-email" autocomplete="off">

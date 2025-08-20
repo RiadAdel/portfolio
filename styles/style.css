@@ -8,6 +8,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --accent: #ffdf00;
+  --dark-bg: #05000f;
+}
 
 html,
 body {
@@ -142,52 +146,86 @@ section {
 }
 
 main .introduction {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping on small screens */
   justify-content: space-around;
+  align-items: center;
+  gap: 2rem; /* spacing between text and image */
+  padding: 2rem 1rem;
 }
 
 main .introduction img {
-  max-width: 50vw;
-  width: 15rem;
+  width: 250px; /* good default size */
+  max-width: 100%; /* prevent overflow */
+  height: auto;
   background-color: #ffffff;
   border: 1px solid #aaa;
   padding: 2px;
   box-shadow: 10px 10px 20px rgba(5, 0, 15, 0.3);
+  border-radius: 8px; /* optional polish */
 }
 
 main .introduction .text {
   flex: 1;
   max-width: 700px;
-  min-height: 50vh;
   color: #eee;
   font-family: "Roboto Mono", monospace;
 }
 
-@keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-
-  50% {
-    color: #ffdf00;
-  }
-}
-
+/* Headings scale down on smaller screens */
 main .introduction .text h1 {
-  color: #eee;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 main .introduction .text h3 {
-  color: #eee;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: normal;
   padding: 0.5rem 0 1rem 0;
 }
 
 main .introduction .text p {
   color: #eee;
-  width: 90%;
+  max-width: 90%;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* On small screens, stack text above image */
+@media (max-width: 768px) {
+  main .introduction {
+    flex-direction: column-reverse; /* show text first, then image */
+    text-align: center;
+  }
+
+  main .introduction .text p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+main .introduction img {
+  width: 250px; /* default for mobile/tablet */
+  max-width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border: 1px solid #aaa;
+  padding: 2px;
+  box-shadow: 10px 10px 20px rgba(5, 0, 15, 0.3);
+  border-radius: 8px;
+}
+
+/* Bigger image on medium screens (laptops) */
+@media (min-width: 992px) {
+  main .introduction img {
+    width: 350px; /* increase size */
+  }
+}
+
+/* Even bigger on very large screens */
+@media (min-width: 1400px) {
+  main .introduction img {
+    width: 420px;
+  }
 }
 
 .cursor::after {
@@ -224,7 +262,7 @@ main .previous-work .current {
 }
 
 main .previous-work .info {
-  padding-right: 2rem;
+  max-width: 700px;
   flex: 1;
 }
 
@@ -239,24 +277,47 @@ main .previous-work .info h1 {
   font-size: 3em;
 }
 
-main .previous-work #left {
+main .previous-work .info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+main .previous-work #left,
+main .previous-work #right {
   position: absolute;
-  padding: 1rem;
-  left: 5%;
-  font-size: 2em;
+  top: 50%; /* center vertically */
+  transform: translateY(-50%);
+  font-size: clamp(1.5rem, 3vw, 2.5rem); /* responsive size */
+  padding: 0.5rem;
   cursor: pointer;
   z-index: 2;
-  transform: translateX(-50%);
+  color: #000; /* adjust to theme */
+  background: rgba(255, 255, 255, 0.6); /* optional: clearer on text/bg */
+  border-radius: 50%; /* optional: circular button feel */
+  transition: background 0.3s;
+}
+
+main .previous-work #left:hover,
+main .previous-work #right:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+main .previous-work #left {
+  left: 1rem; /* fixed distance instead of % for consistency */
 }
 
 main .previous-work #right {
-  position: absolute;
-  padding: 1rem;
-  right: 5%;
-  font-size: 2em;
-  cursor: pointer;
-  z-index: 2;
-  transform: translateX(50%);
+  right: 1rem;
+}
+
+/* On very small screens, move arrows slightly lower & smaller */
+@media (max-width: 600px) {
+  main .previous-work #left,
+  main .previous-work #right {
+    font-size: 1.5rem;
+    padding: 0.25rem;
+  }
 }
 
 /********* Contact Us *********/
@@ -345,7 +406,10 @@ main .contact-us form input {
   width: 100%;
   margin-bottom: 16px;
 }
-
+main .contact-us.phone {
+  white-space: nowrap; /* keeps the whole number together */
+  margin: 0 0 5px 0; /* spacing between lines */
+}
 main .contact-us form textarea {
   padding: 10px;
   width: 100%;
