@@ -1,11 +1,12 @@
-function scroll(trigger, content) {
-  trigger.addEventListener("click", function (e) {
-    console.log(e);
-    content.scrollIntoView(false);
-  });
-}
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
 
 function typingAnimation(elm, content, delay = 100, removeAfterFinish = true) {
+  if (prefersReducedMotion) {
+    elm.innerText = content;
+    return;
+  }
   let count = 0;
   elm.classList.add("cursor");
   let intervalID = setInterval(function () {
@@ -17,58 +18,66 @@ function typingAnimation(elm, content, delay = 100, removeAfterFinish = true) {
   }, delay);
 }
 
-function prevSlide(slider, currentSlide) {
-  const slides = slider.querySelectorAll("div.slide");
-  slides[currentSlide].classList.remove("current");
-  currentSlide = currentSlide == 0 ? slides.length - 1 : currentSlide - 1;
-  slides[currentSlide].classList.add("current");
-  return currentSlide;
-}
-
-function nextSlide(slider, currentSlide) {
-  const slides = slider.querySelectorAll("div.slide");
-  slides[currentSlide].classList.remove("current");
-  currentSlide = currentSlide == slides.length - 1 ? 0 : currentSlide + 1;
-  slides[currentSlide].classList.add("current");
-  return currentSlide;
+function showSlide(slides, dots, index) {
+  slides.forEach((s, i) => s.classList.toggle("current", i === index));
+  if (dots) {
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === index);
+      d.setAttribute("aria-selected", i === index ? "true" : "false");
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const navElms = document.querySelectorAll("nav > ul > li");
-  const contentElms = document.querySelectorAll("main > section");
   const detailsElm = document.getElementById("details");
   const slider = document.getElementById("prev-work");
   const sendEmailFormElm = document.getElementById("send-email");
-  if (navElms.length != contentElms.length) {
-    console.log("Navigation error");
-    return;
+  const yearElm = document.getElementById("year");
+
+  if (yearElm) yearElm.textContent = new Date().getFullYear();
+
+  if (detailsElm) {
+    const tagline = "From raw data to real-time insight.";
+    typingAnimation(detailsElm, tagline, 70, false);
   }
 
-  navElms.forEach((elm, i) => {
-    scroll(elm, contentElms[i]);
-  });
+  if (slider) {
+    const slides = Array.from(slider.querySelectorAll("div.slide"));
+    const dots = Array.from(slider.querySelectorAll(".slide-dots .dot"));
+    const leftArrow = slider.querySelector("#left");
+    const rightArrow = slider.querySelector("#right");
+    let currentSlide = 0;
 
-  const details =
-    "Hi there! 😁\n From raw data to real-time impact — that’s my craft 👌";
-  const delay = 85;
+    const go = (i) => {
+      currentSlide = (i + slides.length) % slides.length;
+      showSlide(slides, dots, currentSlide);
+    };
 
-  typingAnimation(detailsElm, details, delay, false);
+    leftArrow.addEventListener("click", () => go(currentSlide - 1));
+    rightArrow.addEventListener("click", () => go(currentSlide + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => go(i)));
 
-  const leftArrow = slider.querySelector("#left");
-  const rightArrow = slider.querySelector("#right");
-  let currentSlide = 0;
-  leftArrow.addEventListener("click", () => {
-    currentSlide = prevSlide(slider, currentSlide);
-  });
-  rightArrow.addEventListener("click", () => {
-    currentSlide = nextSlide(slider, currentSlide);
-  });
+    document.addEventListener("keydown", (e) => {
+      const rect = slider.getBoundingClientRect();
+      const inView =
+        rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      if (e.key === "ArrowLeft") go(currentSlide - 1);
+      if (e.key === "ArrowRight") go(currentSlide + 1);
+    });
+  }
 
-  sendEmailFormElm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(sendEmailFormElm).entries());
-    window.open(
-      `mailto:riadadel22@gmail.com?subject=${data.subject}&body=${data.content}`
-    );
-  });
+  if (sendEmailFormElm) {
+    sendEmailFormElm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(
+        new FormData(sendEmailFormElm).entries()
+      );
+      window.open(
+        `mailto:riadadel22@gmail.com?subject=${encodeURIComponent(
+          data.subject || ""
+        )}&body=${encodeURIComponent(data.content || "")}`
+      );
+    });
+  }
 });

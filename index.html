@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Portfolio</title>
+    <title>Riad Adel — BI Solution Engineer & Data Engineer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:wght@500&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Riad Adel — BI Solution Engineer & Data Engineer in Riyadh. Bridging classic BI (Power BI, SSAS, Incorta) with modern streaming (Spark + Kafka). Building real-time fintech data platforms."
     />
+    <meta property="og:title" content="Riad Adel — BI Solution Engineer & Data Engineer" />
+    <meta
+      property="og:description"
+      content="Bridging classic BI with modern streaming. Real-time fintech data platforms in Riyadh."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@500;600;700&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
     <link rel="stylesheet" href="styles/style.css" />
@@ -18,25 +26,38 @@
 
   <body>
     <header>
-      <p>Ri<span>AD</span>el</p>
+      <a href="#intro" class="logo" aria-label="Riad Adel — home">Ri<span>AD</span>el</a>
       <nav>
         <ul>
-          <li>Who am I?</li>
-          <li>Projects</li>
-          <li>Contact me</li>
+          <li><a href="#intro">About</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#prev-work">Projects</a></li>
+          <li><a href="#contact-us">Contact</a></li>
         </ul>
       </nav>
       <div class="icons">
         <a
           href="https://www.linkedin.com/in/RiadAdel"
           target="_blank"
-          class="fa fa-linkedin"
-        ></a>
+          rel="noopener"
+          aria-label="LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
         <a
           href="https://www.github.com/RiadAdel"
           target="_blank"
-          class="fa fa-github"
-        ></a>
+          rel="noopener"
+          aria-label="GitHub"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
       </div>
     </header>
 
@@ -45,71 +66,264 @@
       <section id="intro" class="introduction">
         <div class="text">
           <h1 id="name">Riad Adel</h1>
-          <h3 id="title">Data Engineer</h3>
+          <h3 id="title">BI Solution Engineer <span class="sep">·</span> Data Engineer</h3>
           <p id="details"></p>
+          <p class="bio">
+            BI Solution Engineer at <strong>Incorta</strong> in Riyadh, currently
+            architecting real-time fintech data pipelines for
+            <strong>Neoleap</strong>. I bridge classic BI (Power BI, SSAS, Talend)
+            with modern streaming (Spark + Kafka) — turning enterprise data into
+            sub-second insight.
+          </p>
+
+          <div class="stats" aria-label="Key facts">
+            <div class="stat">
+              <span class="num">5+</span>
+              <span class="label">years BI &amp; Data Engineering</span>
+            </div>
+            <div class="stat">
+              <span class="num">3</span>
+              <span class="label">countries delivered</span>
+            </div>
+            <div class="stat">
+              <span class="num">Fintech</span>
+              <span class="label">2-yr Neoleap engagement</span>
+            </div>
+            <div class="stat">
+              <span class="num">Real-time</span>
+              <span class="label">Kafka + Spark Streaming</span>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="cta cta-primary" href="#prev-work">View work</a>
+            <a
+              class="cta cta-secondary"
+              href="assets/Riad_Adel.pdf"
+              download
+              >Download CV</a
+            >
+          </div>
         </div>
-        <img src="assets/images/riad.png" />
+        <img src="assets/images/riad.png" alt="Portrait of Riad Adel" />
       </section>
 
-      <!-- PROJECTS -->
+      <!------------------------------ BACKGROUND (Skills + Experience) -------------->
+      <section id="background" class="background" aria-label="Background">
+        <div class="background-inner">
+          <div class="bg-col bg-skills">
+            <h2>Skills</h2>
+            <div class="skill-group">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                </svg>
+                Data Engineering
+              </h3>
+              <ul>
+                <li>Apache Spark</li>
+                <li>Spark Structured Streaming</li>
+                <li>Apache Kafka</li>
+                <li>Talend</li>
+                <li>SSIS</li>
+                <li>Entity Framework</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="6" y1="20" x2="6" y2="16"/>
+                  <line x1="12" y1="20" x2="12" y2="10"/>
+                  <line x1="18" y1="20" x2="18" y2="4"/>
+                </svg>
+                BI &amp; Analytics
+              </h3>
+              <ul>
+                <li>Incorta</li>
+                <li>Power BI</li>
+                <li>SSAS</li>
+                <li>SAP BusinessObjects</li>
+                <li>Denodo</li>
+                <li>D3.js</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                Languages &amp; Query
+              </h3>
+              <ul>
+                <li>Python</li>
+                <li>SQL (Spark / Oracle)</li>
+                <li>JavaScript</li>
+                <li>DAX</li>
+                <li>C#</li>
+                <li>HTML / CSS</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-col bg-experience">
+            <h2>Experience</h2>
+            <ol class="timeline">
+              <li class="t-item">
+                <div class="t-marker"></div>
+                <div class="t-content">
+                  <div class="t-head">
+                    <h3>Incorta</h3>
+                    <span class="t-dates">Mar 2024 — Present</span>
+                  </div>
+                  <p class="t-role">BI Solution Engineer II · Riyadh, KSA</p>
+                  <p>
+                    Leading Incorta platform implementations for enterprise
+                    fintech (2-yr Neoleap engagement). Real-time pipelines with
+                    Spark Structured Streaming + Kafka.
+                  </p>
+                </div>
+              </li>
+              <li class="t-item">
+                <div class="t-marker"></div>
+                <div class="t-content">
+                  <div class="t-head">
+                    <h3>Orange Business Services</h3>
+                    <span class="t-dates">Jul 2022 — Feb 2024</span>
+                  </div>
+                  <p class="t-role">BI Engineer · Cairo, Egypt</p>
+                  <p>
+                    ETL pipelines (Talend, SSIS), C#/EF integration workflows,
+                    and Power BI dashboard redesigns. Certified Scrum Master.
+                  </p>
+                </div>
+              </li>
+              <li class="t-item">
+                <div class="t-marker"></div>
+                <div class="t-content">
+                  <div class="t-head">
+                    <h3>Ejada Systems</h3>
+                    <span class="t-dates">Nov 2020 — Jun 2022</span>
+                  </div>
+                  <p class="t-role">BI Analyst · Riyadh, KSA</p>
+                  <p>
+                    End-to-end BI on the Microsoft stack (SSIS/SSAS/Power BI),
+                    Denodo virtualization, custom D3.js visuals.
+                  </p>
+                </div>
+              </li>
+            </ol>
+            <p class="edu">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <strong>B.Sc. Computer Engineering</strong> — Cairo University, 2015–2020
+              <span class="cert-badge">Certified Scrum Master</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!------------------------------ PROJECTS -------------------------------------->
       <section id="prev-work" class="previous-work" aria-label="Projects">
         <div class="slide current">
           <div class="info">
-            <h1>FraudStream (Real‑time)</h1>
+            <span class="role-badge">Incorta · Fintech</span>
+            <h1>Neoleap Real-Time Transaction Pipeline</h1>
             <p>
-              End‑to‑end fraud detection with Kafka → Spark Structured Streaming
-              → Delta Lake. Low‑latency features served via Redis; sub‑second
-              scoring with SCD2 history.
+              Architected and delivered a real-time data pipeline for a leading
+              Saudi fintech, ingesting high-volume financial transactions with
+              Spark Structured Streaming + Kafka into Incorta. 2-year ongoing
+              engagement covering solution design, technical documentation, and
+              customer enablement.
             </p>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="info">
-            <h1>Performance Optimization & Incremental Loads</h1>
-            <p>
-              Designed and implemented incremental loading strategies to replace
-              full refresh jobs, improving efficiency and cutting processing
-              time by 70%. Optimized Spark jobs with partition pruning, caching,
-              and adaptive query execution for scalable performance.
-            </p>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="info">
-            <h1>Realtime Feature Store</h1>
-            <p>
-              Streaming aggregations, late‑arriving handling, and point‑in‑time
-              joins. Designed for experiment-ready metrics and backfills without
-              downtime.
-            </p>
+            <div class="tech-tags">
+              <span>Apache Kafka</span>
+              <span>Spark Structured Streaming</span>
+              <span>Incorta</span>
+              <span>Real-time</span>
+            </div>
           </div>
         </div>
 
         <div class="slide">
           <div class="info">
-            <h1>Batch → Streaming Migration</h1>
+            <span class="role-badge">Freelance · Government</span>
+            <h1>SDA Executive Dashboard</h1>
             <p>
-              Re‑platformed KPI pipelines to event‑driven architecture; cut
-              latency from hours to minutes. Added data quality checks and
-              idempotent upserts for reliability.
+              Full BI solution for the Sharqia Development Authority (Saudi
+              Arabia): Power BI Report Server with scale-out deployment, custom
+              KPI data model, and an executive dashboard designed end-to-end in
+              Figma before implementation.
             </p>
+            <div class="tech-tags">
+              <span>Power BI</span>
+              <span>Report Server</span>
+              <span>Data Modeling</span>
+              <span>Figma</span>
+            </div>
           </div>
         </div>
 
-        <div
-          id="left"
-          class="fa fa-chevron-left"
-          aria-label="Previous slide"
-          role="button"
-          tabindex="0"
-        ></div>
-        <div
-          id="right"
-          class="fa fa-chevron-right"
-          aria-label="Next slide"
-          role="button"
-          tabindex="0"
-        ></div>
+        <div class="slide">
+          <div class="info">
+            <span class="role-badge">Orange Business Services</span>
+            <h1>Enterprise BI Modernization</h1>
+            <p>
+              Rebuilt ETL reliability with Talend &amp; SSIS pipelines, wired
+              C# + Entity Framework integration workflows between siloed source
+              systems, and redesigned legacy Power BI dashboards for clarity
+              and load performance. Python automation for historical archival.
+            </p>
+            <div class="tech-tags">
+              <span>Talend</span>
+              <span>SSIS</span>
+              <span>C# / EF</span>
+              <span>Power BI</span>
+              <span>Python</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="info">
+            <span class="role-badge">Ejada Systems</span>
+            <h1>Denodo Virtualization &amp; Custom Visuals</h1>
+            <p>
+              Implemented Denodo data virtualization to unify access across
+              siloed source systems, reducing duplication and integration
+              complexity. Built custom Power BI visuals with JavaScript &amp;
+              D3.js for client-specific reporting needs.
+            </p>
+            <div class="tech-tags">
+              <span>Denodo</span>
+              <span>Power BI</span>
+              <span>SSAS</span>
+              <span>D3.js</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="left" class="slide-arrow" aria-label="Previous project" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button id="right" class="slide-arrow" aria-label="Next project" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="slide-dots" role="tablist" aria-label="Project slides">
+          <button class="dot active" type="button" role="tab" aria-label="Go to project 1" aria-selected="true"></button>
+          <button class="dot" type="button" role="tab" aria-label="Go to project 2" aria-selected="false"></button>
+          <button class="dot" type="button" role="tab" aria-label="Go to project 3" aria-selected="false"></button>
+          <button class="dot" type="button" role="tab" aria-label="Go to project 4" aria-selected="false"></button>
+        </div>
       </section>
 
       <!------------------------------ Contact Us  ---------------------------------->
@@ -117,18 +331,31 @@
         <div class="contact-info">
           <h1>Contact Me</h1>
           <div>
-            <i class="fa fa-address-card"></i>
-            <p>riadadel22@gmail.com</p>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <polyline points="22 6 12 13 2 6"/>
+            </svg>
+            <a href="mailto:riadadel22@gmail.com">riadadel22@gmail.com</a>
           </div>
           <div>
-            <i class="fa fa-phone-square"></i>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
             <div class="phones">
-              <p class="phone">+20 1066 747537</p>
-              <p class="phone">+966 5627 18929</p>
+              <a class="phone" href="tel:+201066747537">+20 1066 747537</a>
+              <a class="phone" href="tel:+966500419247">+966 500 419 247</a>
             </div>
           </div>
+          <div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <p>Arabic (Native) · English (Professional)</p>
+          </div>
         </div>
-        <form id="send-email" autocomplete="off">
+        <form id="send-email" autocomplete="off" novalidate>
           <h1>Send an Email</h1>
           <label for="subject">Subject</label>
           <input
@@ -136,18 +363,25 @@
             name="subject"
             type="text"
             placeholder="Enter the email subject"
+            required
+            minlength="2"
+            maxlength="120"
           />
           <label for="content">Message</label>
           <textarea
             id="content"
             name="content"
-            placeholder="Enter you message here."
+            placeholder="Enter your message here."
+            required
+            minlength="5"
+            maxlength="2000"
           ></textarea>
+          <p class="form-note">Opens in your email client.</p>
           <button type="submit">Send</button>
         </form>
       </section>
     </main>
-    <footer>© 2020 Riad Adel All Rights Reserved</footer>
+    <footer>© <span id="year"></span> Riad Adel · All Rights Reserved</footer>
     <script src="scripts/index.js"></script>
   </body>
 </html>
